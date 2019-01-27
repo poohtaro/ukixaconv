@@ -1,0 +1,34 @@
+#!/usr/bin/awk -f
+BEGIN {
+  n = 0
+  sep = "<!--paragraph_separator-->"
+}
+
+/^\t$/ {
+  if (n > 0) {
+    n = 0
+  }
+  else {
+    ++n
+  }
+
+  $0 = sep
+}
+
+/^\t.+/ {
+  printf "> "
+  $0 = substr($0,2,length($0)-1) sep
+}
+
+/.+\t$/ {
+  $0 = sep "{: .text-right}" sep substr($0,1,length($0)-1) sep
+}
+
+{
+  if (n > 0) {
+    if (n > 1) printf "> "
+    ++n
+  }
+
+  print
+}

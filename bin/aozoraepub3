@@ -1,0 +1,12 @@
+#!/bin/sh
+AOZORAEPUB3_PATH="$HOME"/Applications/AozoraEpub3
+
+set -eu
+[ $# -ne 3 ] && exit 1
+
+INI_FILE=$(cd $(dirname $1) && pwd)/$(basename $1)
+OUTPUT_PATH=$(cd $(dirname $2) && pwd)
+INPUT_FILE=$(cd $(dirname $3) && pwd)/$(basename $3)
+
+cd "$AOZORAEPUB3_PATH"
+java -cp AozoraEpub3.jar AozoraEpub3 -i "$INI_FILE" -of -d "$OUTPUT_PATH" "$INPUT_FILE"

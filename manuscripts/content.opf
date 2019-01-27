@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package unique-identifier="uid">
+  <metadata>
+    <meta content="vertical-rl" name="primary-writing-mode" />
+    <dc-metadata xmlns:dc="http://purl.org/metadata/dublin_core"
+    xmlns:oebpackage="http://openebook.org/namespaces/oeb-package/1.0/"
+    xmlns:opf="http://www.idpf.org/2007/opf">
+      <dc:Language>JA</dc:Language>
+      <dc:Title>本のタイトル</dc:Title>
+      <dc:Publisher>発行者名</dc:Publisher>
+      <dc:creator opf:role="aut">著者名</dc:creator>
+    </dc-metadata>
+    <x-metadata>
+      <output encoding="utf-8" output="text/html" />
+    </x-metadata>
+  </metadata>
+  <manifest>
+    <item href="content.html" id="toc"
+    media-type="application/xhtml+xml" properties="nav" />
+    <item href="content.html" id="html"
+    media-type="text/x-oeb1-document" />
+   </manifest>
+  <spine page-progression-direction="rtl">
+    <itemref idref="html" />
+  </spine>
+  <guide>
+    <reference href="content.html#toc" title="Table of Contents"
+    type="toc" />
+    <reference href="content.html#start" title="Beginning"
+    type="text" />
+  </guide>
+</package>

@@ -1,0 +1,30 @@
+#!/usr/bin/ruby
+require 'cgi'
+
+while line = gets
+  a = line.split(/<span class="notes">(.*?)<\/span>/)
+  ff = false
+  a.each do |s|
+    case s
+    when /［＃([^（）]*)（([-\w.]+\.(gif|bmp|jpg|jpeg|png|svg))、横[0-9]+×縦[0-9]+）入る］/ then
+      s = '<div class="figure"><img src="' + CGI.unescapeHTML($2) +
+            '" alt="' + CGI.unescapeHTML($1) +
+            '" /></div>'
+    when /［＃([^（）]*)（([-\w.]+\.(gif|bmp|jpg|jpeg|png|svg))）入る］/ then
+      s = '<div class="figure"><img src="' + CGI.unescapeHTML($2) +
+            '" alt="' + CGI.unescapeHTML($1) +
+            '" /></div>'
+    when '［＃改ページ］' then
+      s = '<mbp:pagebreak />'
+      ff = true
+    when /<br\s*\/>/ then
+      if ff then
+        s = "\n"
+      end
+    when /［＃直値\s+(.*)］/ then
+      s = CGI.unescapeHTML($1)
+    end
+
+    print s
+  end
+end

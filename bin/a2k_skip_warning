@@ -1,0 +1,12 @@
+#!/usr/bin/awk -f
+BEGIN {
+  f = 0
+}
+
+/^<\?xml/ {
+  f = 1
+}
+
+f != 0 {
+  print $0
+}

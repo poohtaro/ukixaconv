@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+umask 0022
+
+printf '%s' '<nav id="toc" epub:type="toc">
+<h3>目次</h3>
+<ol>
+'
+
+sed -n 's/^<h3 class="o-midashi" id="\(..*\)">\(..*\)<\/h3>/<li><a href="#\1"\>\2<\/a><\/li>/p'
+
+printf '%s' '</ol>
+</nav>
+<nav epub:type="landmarks" hidden="hidden">
+<ol>
+<li> <a epub:type="toc" href="#toc">目次</a> </li>
+</ol>
+</nav>
+'

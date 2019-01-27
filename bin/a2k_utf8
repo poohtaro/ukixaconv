@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+umask 0022
+[ $# -ne 1 ] && exit 1
+
+UTF8FILE=$1.utf8
+SPLITTMP=$1.tmp
+
+iconv -f Shift_JIS -t UTF-8 "$1" |
+tr -d \\r |
+csplit -f "$SPLITTMP" -n1 - '/^<body>/'
+
+cat "${SPLITTMP}0" | sed 's/Shift_JIS/UTF-8/' > "$1"
+cat "${SPLITTMP}1" >> "$1"
+
+rm "${SPLITTMP}"*

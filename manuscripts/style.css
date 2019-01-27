@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+body {
+  font-family: serif;
+  -webkit-writing-mode: vertical-rl;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+nav ol {
+  margin-top:0.9em;
+  padding:0;
+  list-style:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font:normal normal 1.0em sans-serif;
+}
+
+h1 {
+  text-indent:3em;
+  font-size:1.3em;
+}
+
+h2 {
+  text-indent:1.6em;
+  font-size:1.2em;
+}
+
+h3 {
+  text-indent:1.8em;
+  font-size:1.1em;
+}
+
+blockquote {margin-top:3em;}
+
+p.text-right {
+  text-align:right;
+  margin-right:0em;
+}
+
+em {
+  font-style:normal;
+  -webkit-text-emphasis-style:filled sesame;
+}
+
+span.tcy {-webkit-text-combine:horizontal;}
+
+div.figure {
+  text-align: center;
+}
+
+img {
+  width:auto;
+  height:100%;
+  vertical-align: bottom;
+}
+
+div.yokogumi {
+  -webkit-text-orientation:sideways-right;
+  vertical-align:bottom;
+}

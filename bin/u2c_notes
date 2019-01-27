@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+LF=$(printf '\\\n_')
+LF=${LF%_}
+sed 's/^ *$/　/g' |
+sed 's/<!--paragraph_separator-->/'"$LF"'/g' |
+sed 's/※［＃著作権表示記号、[0-9-][0-9-]*］/©/g' |
+sed 's/［＃改ページ］/'"$LF"'==='"$LF"'/g' |
+sed 's/^［＃ここから横組み］/<div class="yokogumi">/' |
+sed 's/^［＃ここで横組み終わり］/<\/div>/' |
+sed 's/^［＃本文終わり］//' |
+sed 's/［＃直値  *\([^［］][^［］]*\)］/\1/g'
