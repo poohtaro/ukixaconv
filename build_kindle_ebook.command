@@ -44,9 +44,7 @@ cp ./manuscripts/*.svg ./source && true
 cp ./manuscripts/*.opf ./source && true
 cp ./manuscripts/*.css ./source && true
 
-#cp ./source/content.txt ./source/source.txt 
-#./bin/aozoraepub3 ./bin/aozoraepub3-ukixa.ini ./ ./source/source.txt
-#rm ./source/source.txt 
+#exit
 
 aozora2html --use-jisx0213 --use-unicode ./source/content.txt > ./source/content-sjis.html
 cat ./source/content-sjis.html |

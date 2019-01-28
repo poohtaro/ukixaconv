@@ -16,7 +16,7 @@ STDIN.each_line {|line|
   if i.empty? then
     o = line
   else
-    o  = "![" + i[0] + "](" + i[1] + ")"
+    o  = "![" + i[0] + "](" + i[1] + ")\n"
   end
 
   $stdout << o
