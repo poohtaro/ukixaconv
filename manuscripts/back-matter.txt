@@ -1,0 +1,17 @@
+
+
+
+［＃本文終わり］
+ 本のタイトル
+ サブタイトル
+ 
+ 　　　　２０９９年99月99日 第９版発行
+ 
+ 著者　　著者名
+ 発行者　発行者名
+ 　　　　［＃直値 <a href="http://ebook.example.com/">］http://ebook.example.com/［＃直値 </a>］
+ 　　　　［＃直値 <a href="mailto:author@example.com">］mailto:author@example.com［＃直値 </a>］
+ 
+［＃ここから横組み］
+© 2099 author
+［＃ここで横組み終わり］

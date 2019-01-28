@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+s = ""
+while c = STDIN.getc
+  cc = c.ord
+  if cc > 255 || cc == 0x0A then
+    rl = s.length
+    if rl > 0 then
+      if rl < 2 || rl > 2 then #文字の連続数を判定
+        pre = ""
+        post = ""
+      else
+        pre = "^"
+        post = "^"
+        if /^ .*/ =~ s then
+          pre = " " + pre
+        end
+        if /.* $/ =~ s then
+          post = post + " "
+        end
+        s.strip!
+      end
+      $stdout << pre << s << post
+      s = ""
+    end
+    $stdout << c
+  else
+    s = s + c
+  end
+end

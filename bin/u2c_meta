@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+sed 's/｜《/《/g' |
+sed 's/｜》/》/g' |
+sed 's/｜［/［/g' |
+sed 's/｜］/］/g' |
+sed 's/｜〔/〔/g' |
+sed 's/｜〕/〕/g' |
+sed 's/｜｜/｜/g' |
+sed 's/｜＃/＃/g' |
+sed 's/｜※/※/g' |
+sed 's/｜＜/＜/g' |
+sed 's/｜＞/＞/g'

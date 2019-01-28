@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+while c = STDIN.getc
+  if c == "\n" then
+    puts "\r\n"
+  else
+    sjis_c = c.encode("Shift_JIS", :undef => :replace)
+    utf8_c = sjis_c.encode("UTF-8")
+    if c != utf8_c then
+      s = "※［＃自動変換、U+" + "%05X" % c.ord + "、0-0］"
+      $stdout << s.encode("Shift_JIS")
+    else
+      putc sjis_c
+    end
+  end
+end
+
+if c != "\n" then
+  puts "\r\n"
+end

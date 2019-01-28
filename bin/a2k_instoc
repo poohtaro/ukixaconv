@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+umask 0022
+[ $# -ne 2 ] && exit 1
+
+SPLITTMP=$1.tmp
+
+cat "$1" |
+csplit -f "$SPLITTMP" -n1 - '/^<div class="main_text">/'
+
+{
+cat "${SPLITTMP}0"
+echo '<mbp:pagebreak />'
+cat "$2"
+echo '<mbp:pagebreak />'
+cat "${SPLITTMP}1"
+} > "$1"

@@ -1,0 +1,39 @@
+#!/bin/sh
+set -eu
+umask 0022
+[ $# -ne 1 ] && exit 1
+
+SPLITTMP=$1.tmp
+
+cat "$1" |
+csplit -f "$SPLITTMP" -n1 - '/^<body>/'
+
+cat "${SPLITTMP}0" |
+sed 's/href="\.\.\/\.\.\/aozora.css"/href="content.css"/' |
+sed '/<script type="text\/javascript"/d' > "$1"
+
+cat "${SPLITTMP}1" |
+sed 's/<div id="contents" style="display:none"><\/div>//' |
+sed 's/\(<h[1-6] .*\)><a class="midashi_anchor" *\(id=".*"\)>\(.*\)<\/a>\(<\/h[1-6]>\)/\1 \2>\3\4/' |
+sed 's/style="[^"<>]*"//' |
+sed 's/^\(<img  *.*\)  *width=".*"  *height=".*"\(  *src=.*\)$/\1\2/' |
+sed 's/^\(<img.*\/>\)<br  *\/>$/<div class="figure">\1<\/div>/' |
+sed '/^<hr *\/>$/d' >> "$1"
+
+cat "$1" |
+awk '/class="notation_notes"/ {
+  exit 0
+}
+1
+' > "$SPLITTMP"
+
+echo '</body>
+</html>
+' >> "$SPLITTMP"
+
+mv "$SPLITTMP" "$1"
+
+cat "$1" |
+csplit -f "$SPLITTMP" -n1 - '/^<div class="main_text">/'
+
+rm "${SPLITTMP}"*

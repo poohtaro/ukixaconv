@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+STDIN.each_line {|line|
+  o = line
+
+  i = line.scan(/［＃([^（）]*)（([-\w.]+\.(gif|bmp|jpg|jpeg|png|svg))、横[0-9]+×縦[0-9]+）入る］/).flatten
+  if i.empty? then
+    i = line.scan(/［＃([^（）]*)（([-\w.]+\.(gif|bmp|jpg|jpeg|png|svg))）入る］/).flatten
+    if i.empty? then
+      i = line.scan(/^([-\w.]+\.(gif|bmp|jpg|jpeg|png|svg))$/).flatten
+      if !i.empty? then
+        i.unshift("")
+      end
+    end
+  end
+
+  if i.empty? then
+    o = line
+  else
+    o  = "![" + i[0] + "](" + i[1] + ")\n"
+  end
+
+  $stdout << o
+}
