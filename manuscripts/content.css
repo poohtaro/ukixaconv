@@ -59,3 +59,7 @@ div.yokogumi {
   -webkit-text-orientation:sideways-right;
   vertical-align:bottom;
 }
+
+div.pagebreak {
+  page-break-before:always;
+}

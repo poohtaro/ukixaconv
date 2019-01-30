@@ -10,8 +10,8 @@ csplit -f "$SPLITTMP" -n1 - '/^<div class="main_text">/'
 
 {
 cat "${SPLITTMP}0"
-echo '<mbp:pagebreak />'
+echo '<div class="pagebreak"></div>'
 cat "$2"
-echo '<mbp:pagebreak />'
+echo '<div class="pagebreak"></div>'
 cat "${SPLITTMP}1"
 } > "$1"

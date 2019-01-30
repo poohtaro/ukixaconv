@@ -15,7 +15,7 @@ while line = gets
             '" alt="' + CGI.unescapeHTML($1) +
             '" /></div>'
     when '［＃改ページ］' then
-      s = '<mbp:pagebreak />'
+      s = '<div class="pagebreak"></div>'
       ff = true
     when /<br\s*\/>/ then
       if ff then
