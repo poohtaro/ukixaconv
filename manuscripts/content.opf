@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package unique-identifier="uid">
   <metadata>
+    <meta content="my-cover-image" name="cover"/>
     <meta content="vertical-rl" name="primary-writing-mode" />
     <dc-metadata xmlns:dc="http://purl.org/metadata/dublin_core"
     xmlns:oebpackage="http://openebook.org/namespaces/oeb-package/1.0/"
@@ -19,6 +20,7 @@
     media-type="application/xhtml+xml" properties="nav" />
     <item href="content.html" id="html"
     media-type="text/x-oeb1-document" />
+    <item href="content.jpeg" id="my-cover-image" media-type="image/jpeg"/>
    </manifest>
   <spine page-progression-direction="rtl">
     <itemref idref="html" />
