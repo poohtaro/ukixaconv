@@ -8,8 +8,8 @@
     xmlns:opf="http://www.idpf.org/2007/opf">
       <dc:Language>JA</dc:Language>
       <dc:Title>本のタイトル</dc:Title>
-      <dc:Publisher>発行者名</dc:Publisher>
       <dc:creator opf:role="aut">著者名</dc:creator>
+      <dc:Publisher>発行者名</dc:Publisher>
     </dc-metadata>
     <x-metadata>
       <output encoding="utf-8" output="text/html" />

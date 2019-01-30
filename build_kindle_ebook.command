@@ -6,7 +6,7 @@ IFS=$(printf ' \t\n_'); IFS=${IFS%_}
 export IFS PATH
 
 PATH_MYSELF=$(dirname "$0")
-NORMALIZED_PAHT_MYSELF=$(cd -P ${PATH_MYSELF}; pwd)
+NORMALIZED_PAHT_MYSELF=$(cd -P "$PATH_MYSELF"; pwd)
 
 cd "$NORMALIZED_PAHT_MYSELF"
 mkdir -p source
