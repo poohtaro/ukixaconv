@@ -61,5 +61,5 @@ div.yokogumi {
 }
 
 div.pagebreak {
-  page-break-before:always;
+  page-break-after:always;
 }

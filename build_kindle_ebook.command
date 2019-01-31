@@ -56,6 +56,9 @@ cat ./source/content-utf8.html | ./bin/a2k_toc > ./source/toc.html.tmp
 cat ./source/content-utf8.html |
 ./bin/a2k_notes |
 sed 's/¥/\\/g' > ./source/content.html
+./bin/a2k_doctype ./source/content.html
+
+#exit
 
 rm ./source/*.txt ./source/*.tmp*
 rm ./source/content-sjis.html ./source/content-utf8.html

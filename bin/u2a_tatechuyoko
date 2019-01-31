@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-# u2a_tatechuyoko
 s = ""
 while c = STDIN.getc
   cc = c.ord
