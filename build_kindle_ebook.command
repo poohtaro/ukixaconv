@@ -43,7 +43,9 @@ cp ./manuscripts/*.png ./source && true
 cp ./manuscripts/*.svg ./source && true
 cp ./manuscripts/*.opf ./source && true
 cp ./manuscripts/*.css ./source && true
+rm ./source/style.css
 
+#./bin/aozoraepub3 ./bin/aozoraepub3-ukixa.ini ./ ./source/content.txt
 #exit
 
 aozora2html --use-jisx0213 --use-unicode ./source/content.txt > ./source/content-sjis.html
@@ -57,8 +59,6 @@ cat ./source/content-utf8.html |
 ./bin/a2k_notes |
 sed 's/¥/\\/g' > ./source/content.html
 ./bin/a2k_doctype ./source/content.html
-
-#exit
 
 rm ./source/*.txt ./source/*.tmp*
 rm ./source/content-sjis.html ./source/content-utf8.html
