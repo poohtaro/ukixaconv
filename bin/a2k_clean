@@ -9,6 +9,11 @@ cat "$1" |
 csplit -f "$SPLITTMP" -n1 - '/^<body>/'
 
 cat "${SPLITTMP}0" |
+sed 's/<title>.*<\/title>/<title><\/title>/' |
+sed '/<link rel="Schema.DC"/d' |
+sed '/<meta name="DC.Title"/d' |
+sed '/<meta name="DC.Creator"/d' |
+sed '/<meta name="DC.Publisher"/d' |
 sed 's/href="\.\.\/\.\.\/aozora.css"/href="content.css"/' |
 sed '/<script type="text\/javascript"/d' > "$1"
 
@@ -32,8 +37,3 @@ echo '</body>
 ' >> "$SPLITTMP"
 
 mv "$SPLITTMP" "$1"
-
-cat "$1" |
-csplit -f "$SPLITTMP" -n1 - '/^<div class="main_text">/'
-
-rm "${SPLITTMP}"*

@@ -2,61 +2,63 @@
 
 body {
   font-family: serif;
-  -webkit-writing-mode: vertical-rl;
   line-height: 1.5;
   text-align: justify;
+  -webkit-writing-mode: vertical-rl;
 }
 
+body, div, p {text-indent:0;}
+
 nav ol {
-  margin-top:0.9em;
-  padding:0;
-  list-style:none;
+  padding-top: 2.5%;
+  list-style: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font:normal normal 1.0em sans-serif;
+  line-height: 1.2;
+  text-indent:0;
+  text-align: left;
 }
 
 h1 {
-  text-indent:3em;
-  font-size:1.3em;
+  text-indent: 10%;
+  font-size: 1.3em;
 }
 
 h2 {
-  text-indent:1.6em;
-  font-size:1.2em;
+  text-indent: 5%;
+  font-size: 1.2em;
 }
 
 h3 {
-  text-indent:1.8em;
-  font-size:1.1em;
+  text-indent: 5%;
+  font-size: 1.1em;
 }
 
-blockquote {margin-top:3em;}
+blockquote {margin-top: 5%;}
 
 p.text-right {
-  text-align:right;
-  margin-right:0em;
+  text-align: right;
+  margin-right: 0;
 }
 
 em {
-  font-style:normal;
-  -webkit-text-emphasis-style:filled sesame;
+  font-style: normal;
+  -webkit-text-emphasis-style: filled sesame;
 }
 
-span.tcy {-webkit-text-combine:horizontal;}
+span.tcy {-webkit-text-combine: horizontal;}
 
-div.figure {
-  text-align: center;
-}
+div.figure {text-align: center;}
 
 img {
-  width:auto;
-  height:100%;
+  width: auto;
+  height: 100%;
   vertical-align: bottom;
 }
 
 div.yokogumi {
-  -webkit-text-orientation:sideways-right;
-  vertical-align:bottom;
+  -webkit-text-orientation: sideways-right;
+  vertical-align: bottom;
 }

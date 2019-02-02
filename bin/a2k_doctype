@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+umask 0022
+[ $# -ne 1 ] && exit 1
+
+SPLITTMP=$1.tmp
+
+cat "$1" |
+csplit -f "$SPLITTMP" -n1 - '/^<head>/'
+
+{
+  echo '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:epub="http://www.idpf.org/2007/ops"
+xml:lang="ja" lang="ja">'
+  cat "${SPLITTMP}1"
+} > $1

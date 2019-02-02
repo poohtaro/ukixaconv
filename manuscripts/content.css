@@ -2,60 +2,72 @@
 
 body {
   font-family: serif;
-  -webkit-writing-mode: vertical-rl;
   line-height: 1.5;
   text-align: justify;
+  -webkit-writing-mode: vertical-rl;
 }
 
-nav ol {list-style:none;}
+body, div, p {text-indent:0;}
+
+nav ol {
+  padding-top: 5%;
+  line-height: 1.5;
+  list-style:none;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font:normal normal 1.0em sans-serif;
+  line-height: 1.2;
+  text-indent:0;
+  text-align: left;
 }
 
-h1, h2 {font-size:1.5em;}
+h1, h2 {font-size: 1.4em;}
 h2.author {text-align: right;}
 
 h3 {
-  text-indent:3em;
-  font-size:1.3em;
+  text-indent: 10%;
+  font-size: 1.3em;
 }
 
 h4 {
-  text-indent:1.6em;
-  font-size:1.2em;
+  text-indent: 5%;
+  font-size: 1.2em;
 }
 
 h5 {
-  text-indent:1.8em;
-  font-size:1.1em;
+  text-indent: 5%;
+  font-size: 1.1em;
 }
 
-div.jisage_3 {margin-top:3em;}
+div.jisage_3 {padding-top: 5%;}
 
 div.chitsuki_0 {
-  text-align:right;
-  margin-right: 0em;
+  text-align: right;
+  margin-right: 0;
 }
 
 em.sesame_dot {
-  font-style:normal;
-  -webkit-text-emphasis-style:filled sesame;
+  font-style: normal;
+  -webkit-text-emphasis-style: filled sesame;
 }
 
-span[dir="ltr"] {-webkit-text-combine:horizontal;}
+span[dir="ltr"] {-webkit-text-combine: horizontal;}
 
-div.figure {
-  text-align: center;
-}
+div.figure {text-align: center;}
 
 img {
-  width:auto;
-  height:100%;
+  width: auto;
+  height: 100%;
   vertical-align: bottom;
 }
 
 div.yokogumi {
-  -webkit-text-orientation:sideways-right;
-  vertical-align:bottom;
+  -webkit-text-orientation: sideways-right;
+  vertical-align: bottom;
+}
+
+div.pagebreak {
+  page-break-after: always;
+  display: none;
 }
